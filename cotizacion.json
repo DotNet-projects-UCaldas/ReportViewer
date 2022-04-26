@@ -1,0 +1,186 @@
+{
+    "datosGenerales": [
+        {
+            "fecha": "22/03/2022"
+        },
+        {
+            "razonSocial": "Super de Alimentos"
+        },
+        {
+            "referencia": "Para super"
+        },
+        {
+            "estado": "creada"
+        }
+    ],
+    "subcotizaciones": [
+        {
+            "producto": [
+                {
+                    "nombre": "Caramelo"
+                },
+                {
+                    "componentes": [
+                        {
+                            "tipoComponente": 1,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Humedad y materia seca"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Gravimetría (Secado en estufa hasta peso constante)"
+                                },
+                                {
+                                    "cantidad": 1
+                                },
+                                {
+                                    "precioUnitario": 26676
+                                },
+                                {
+                                    "precioTotal": 26676
+                                }
+                            ]
+                        },
+                        {
+                            "tipoComponente": 2,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Nitrógeno y proteína"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Termo balanza"
+                                },
+                                {
+                                    "cantidad": 1
+                                },
+                                {
+                                    "precioUnitario": 25148
+                                },
+                                {
+                                    "precioTotal": 25148
+                                }
+                            ]
+                        },
+                        {
+                            "tipoComponente": 3,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Grasa"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Gravimetría (Secado en estufa hasta peso constante)"
+                                },
+                                {
+                                    "cantidad": 1
+                                },
+                                {
+                                    "precioUnitario": 10000
+                                },
+                                {
+                                    "precioTotal": 10000
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "total": 61824
+                }
+            ]
+        },
+        {
+            "producto": [
+                {
+                    "nombre": "Coco - Fresa"
+                },
+                {
+                    "componentes": [
+                        {
+                            "tipoComponente": 1,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Grasa"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Gravimetría (Secado en estufa hasta peso constante)"
+                                },
+                                {
+                                    "cantidad": 2
+                                },
+                                {
+                                    "precioUnitario": 10000
+                                },
+                                {
+                                    "precioTotal": 20000
+                                }
+                            ]
+                        },
+                        {
+                            "tipoComponente": 2,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Nitrógeno y proteína"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Termo balanza"
+                                },
+                                {
+                                    "cantidad": 2
+                                },
+                                {
+                                    "precioUnitario": 25148
+                                },
+                                {
+                                    "precioTotal": 50296
+                                }
+                            ]
+                        },
+                        {
+                            "tipoComponente": 3,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Humedad y materia seca"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Gravimetría (Secado en estufa hasta peso constante)"
+                                },
+                                {
+                                    "cantidad": 2
+                                },
+                                {
+                                    "precioUnitario": 26676
+                                },
+                                {
+                                    "precioTotal": 53352
+                                }
+                            ]
+                        },
+                        {
+                            "tipoComponente": 4,
+                            "parametros": [
+                                {
+                                    "fisicoQuimico": "Humedad y materia seca"
+                                },
+                                {
+                                    "tecnicaAnalisis": "Termo balanza"
+                                },
+                                {
+                                    "cantidad": 2
+                                },
+                                {
+                                    "precioUnitario": 14040
+                                },
+                                {
+                                    "precioTotal": 28080
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "total": 213552
+                }
+            ]
+        }
+    ]
+}
