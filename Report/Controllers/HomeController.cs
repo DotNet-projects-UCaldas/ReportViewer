@@ -30,187 +30,365 @@ namespace Report.Controllers
 
         public ActionResult Reporte(string type)
         {
+            List<Estudiantes> estudiantes = new List<Estudiantes>
+            {
+                new Estudiantes { Grado = "3º A", Matricula = "70640", Alumno = "MARTHA MORENO DURAN", FechaIngreso = DateTime.Parse("2004-08-26"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "11001", Alumno = "JOSE CARLOS MENA SANCHEZ", FechaIngreso = DateTime.Parse("2004-09-20"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º B", Matricula = "40640", Alumno = "CUAUHTEMOC MORENO FLORES", FechaIngreso = DateTime.Parse("2004-09-20"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º A", Matricula = "41030", Alumno = "PEDRO CASTRO SANCHEZ", FechaIngreso = DateTime.Parse("2004-10-08"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º A", Matricula = "40640", Alumno = "JORGE ALFREDO MENDEZ BALDERAS", FechaIngreso = DateTime.Parse("2004-11-10"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º A", Matricula = "10443", Alumno = "CONCEPCION DESIDERIO MOTA CASTILLO", FechaIngreso = DateTime.Parse("2004-12-16"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "1º B", Matricula = "11030", Alumno = "FERNANDO ABREU AGUILAR", FechaIngreso = DateTime.Parse("2005-01-14"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "2º B", Matricula = "40640", Alumno = "GABRIEL SALVADOR MENDEZ LUGO", FechaIngreso = DateTime.Parse("2005-01-26"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "11000", Alumno = "JOSE ANTONIO GALLO REYNA", FechaIngreso = DateTime.Parse("2005-02-14"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º B", Matricula = "11031", Alumno = "FRANCISCO MUÑOZ BRAVO", FechaIngreso = DateTime.Parse("2005-03-08"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "60641", Alumno = "FRANCISCO JAVIER CEJA BELTRAN", FechaIngreso = DateTime.Parse("2005-03-08"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "2187", Alumno = "PORFIRIO ABURTO PATTATUCHI", FechaIngreso = DateTime.Parse("2005-04-22"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º A", Matricula = "92135", Alumno = "SERGIO MENDOZA GUZMAN", FechaIngreso = DateTime.Parse("2005-05-13"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º A", Matricula = "64566", Alumno = "JOSE SANTIAGO FERNANDO MURILLO VILLAREAL", FechaIngreso = DateTime.Parse("2005-05-16"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "80784", Alumno = "CARLOS MANUEL AGUILAR MOCARZEL DE PEÑA", FechaIngreso = DateTime.Parse("2005-05-19"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "52858", Alumno = "ANA ELVIA MIJARES RODRIGUEZ", FechaIngreso = DateTime.Parse("2005-05-23"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "1º B", Matricula = "40640", Alumno = "SANTIAGO FERNANDO GALVEZ TOM", FechaIngreso = DateTime.Parse("2005-05-26"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "12995", Alumno = "MARCO TEODORO NARANJO VARGAS", FechaIngreso = DateTime.Parse("2005-06-07"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "77976", Alumno = "BENIGNO CEPERO VILLAR", FechaIngreso = DateTime.Parse("2005-06-07"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "41032", Alumno = "BENITO AGUILERA ORNELAS", FechaIngreso = DateTime.Parse("2005-06-07"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "3º A", Matricula = "75792", Alumno = "MIGUEL ANGEL MOLINA CANTU", FechaIngreso = DateTime.Parse("2005-06-08"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º A", Matricula = "29642", Alumno = "ANITA NAVARRO SANTOS", FechaIngreso = DateTime.Parse("2005-06-08"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º B", Matricula = "11530", Alumno = "JESUS DANIEL AGUILERA RODRIGUEZ", FechaIngreso = DateTime.Parse("2005-06-08"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "49778", Alumno = "JULIAN JAVIER MONTELONGO MORENO", FechaIngreso = DateTime.Parse("2005-06-14"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "4150", Alumno = "MIGUEL GUSTAVO GAMBOA SANCHEZ", FechaIngreso = DateTime.Parse("2005-06-15"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "17379", Alumno = "BULMARO NAVARRO ROSARIO", FechaIngreso = DateTime.Parse("2005-06-16"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "41585", Alumno = "MARIA ISABEL CERVERA TORIZ", FechaIngreso = DateTime.Parse("2005-06-16"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "1º B", Matricula = "8747", Alumno = "JOSE ENRIQUE AGUIRRE SILVA", FechaIngreso = DateTime.Parse("2005-06-20"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "40641", Alumno = "ENRIQUETA MONTERO JORGE", FechaIngreso = DateTime.Parse("2005-06-20"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "39310", Alumno = "FERNANDO NEGRETE AGUILAR", FechaIngreso = DateTime.Parse("2005-06-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "2º B", Matricula = "2168", Alumno = "CARMEN ALICIA AGUIRRE ALVAREZ", FechaIngreso = DateTime.Parse("2005-06-22"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "6648", Alumno = "MARIANO MONTES DE OCA MONTANO", FechaIngreso = DateTime.Parse("2005-06-22"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "61055", Alumno = "GUMARO GARCIA ROMERO", FechaIngreso = DateTime.Parse("2005-06-22"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º B", Matricula = "32861", Alumno = "SERGIO NILL GARCIA", FechaIngreso = DateTime.Parse("2005-06-23"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "65045", Alumno = "JUAN CARLOS CETINA BRINGAS", FechaIngreso = DateTime.Parse("2005-06-23"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "5613", Alumno = "ARTURO ALEJOS MENDEZ", FechaIngreso = DateTime.Parse("2005-06-23"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "1º A", Matricula = "56179", Alumno = "JORGE DE J MONTIEL HERNANDEZ", FechaIngreso = DateTime.Parse("2005-06-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "70013", Alumno = "JOSE LUIS NUÑEZ GIL", FechaIngreso = DateTime.Parse("2005-06-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "11032", Alumno = "NAZARIO ALEMAN MENDEZ", FechaIngreso = DateTime.Parse("2005-06-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "60643", Alumno = "RAUL ALBERTO MONTOYA PADILLA", FechaIngreso = DateTime.Parse("2005-06-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "40642", Alumno = "GILBERTO ISAIAS GARCIA PEREDA", FechaIngreso = DateTime.Parse("2005-06-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "31164", Alumno = "BERNABE ANTONIO OBIL PINZON", FechaIngreso = DateTime.Parse("2005-06-27"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "50924", Alumno = "CARLOS CHALE NAVARRO", FechaIngreso = DateTime.Parse("2005-06-28"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º B", Matricula = "27129", Alumno = "FRANCISCO ALVAREZ GONZALEZ", FechaIngreso = DateTime.Parse("2005-06-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "90759", Alumno = "ROBERTO A MORA OCAMPO", FechaIngreso = DateTime.Parse("2005-06-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º A", Matricula = "60645", Alumno = "PEDRO PABLO OCHOA SEGOVIA", FechaIngreso = DateTime.Parse("2005-06-28"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "11033", Alumno = "CATALINA ALVAREZ BALAM", FechaIngreso = DateTime.Parse("2005-06-29"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "40643", Alumno = "ADOLFO MORALES CASTILLO", FechaIngreso = DateTime.Parse("2005-06-29"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "92133", Alumno = "ELSY NOEMI GARCIA VILLA", FechaIngreso = DateTime.Parse("2005-07-14"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "40644", Alumno = "JULIO CESAR ONTIVEROS OLIVEROS", FechaIngreso = DateTime.Parse("2005-08-12"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º A", Matricula = "34930", Alumno = "MANUEL TOMAS CHAPARRO PEÑA", FechaIngreso = DateTime.Parse("2005-08-17"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º B", Matricula = "40645", Alumno = "GUILLERMO ANTONIO AMADOR PEREA", FechaIngreso = DateTime.Parse("2005-08-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "10896", Alumno = "CARLOS ENRIQUE MORALES ROSAS", FechaIngreso = DateTime.Parse("2005-08-23"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "48163", Alumno = "JESUS ALBERTO ONTIVEROS URAZANDI", FechaIngreso = DateTime.Parse("2005-08-23"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "2º B", Matricula = "60647", Alumno = "CARMEN ANTONIO CASTELLANOS", FechaIngreso = DateTime.Parse("2005-08-23"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º B", Matricula = "52465", Alumno = "DOLORES MORALES MARTINEZ", FechaIngreso = DateTime.Parse("2005-08-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "60649", Alumno = "HUGO MANUEL GARCIA SALINAS", FechaIngreso = DateTime.Parse("2005-08-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "83014", Alumno = "JESUS RICARDO OROPEZA RODRIGUEZ", FechaIngreso = DateTime.Parse("2005-09-13"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "60651", Alumno = "ANDRES CHIPULI PEREZ", FechaIngreso = DateTime.Parse("2005-09-14"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "51695", Alumno = "GUADALUPE DE LA PAZ ANTUNA MURILLO", FechaIngreso = DateTime.Parse("2005-09-15"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º A", Matricula = "51233", Alumno = "JAVIER MORALES LOPEZ", FechaIngreso = DateTime.Parse("2005-09-15"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "19043", Alumno = "MARIA DE CARMEN ORTA JUAREZ", FechaIngreso = DateTime.Parse("2005-09-19"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º A", Matricula = "61030", Alumno = "ROSA INES APPEDOLE FLORES", FechaIngreso = DateTime.Parse("2005-09-19"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "1º A", Matricula = "94714", Alumno = "QUIRINO MORALES ALONSO", FechaIngreso = DateTime.Parse("2005-09-20"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "56294", Alumno = "MARCO ANTONIO GARZA GARZA", FechaIngreso = DateTime.Parse("2005-09-21"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º B", Matricula = "7551", Alumno = "OSCAR ORTIZ ROJAS", FechaIngreso = DateTime.Parse("2005-09-22"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º A", Matricula = "45913", Alumno = "PABLO CLEMENTE VEGA", FechaIngreso = DateTime.Parse("2005-09-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "60653", Alumno = "BARBARA ESTELA ARELLANO TORRES", FechaIngreso = DateTime.Parse("2005-09-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "41034", Alumno = "GRETA MORALES AVILA", FechaIngreso = DateTime.Parse("2005-09-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "43896", Alumno = "ANGEL OSORIO EUAN", FechaIngreso = DateTime.Parse("2005-09-23"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "74563", Alumno = "MARIA EUGENIA ARNAU VADILLO", FechaIngreso = DateTime.Parse("2005-09-23"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º B", Matricula = "40646", Alumno = "EDUARDO MORALES PALMA", FechaIngreso = DateTime.Parse("2005-09-27"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "4714", Alumno = "MAGDA ALICIA GARZA MORALES", FechaIngreso = DateTime.Parse("2005-09-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "1º B", Matricula = "89924", Alumno = "FRANCISCO CANDELARIO PACHECO HERRERA", FechaIngreso = DateTime.Parse("2005-10-07"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "60655", Alumno = "JUAN JOSE COBLE HERRERA", FechaIngreso = DateTime.Parse("2005-10-07"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "60657", Alumno = "DOLORES EUGENIA ARREDONDO CALVO", FechaIngreso = DateTime.Parse("2005-10-18"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "2º B", Matricula = "56334", Alumno = "GERARDO JESUS MORENO LEAL", FechaIngreso = DateTime.Parse("2005-10-19"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "20320", Alumno = "RENE PALMA JACOME", FechaIngreso = DateTime.Parse("2005-10-21"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º B", Matricula = "78949", Alumno = "VICTOR MANUEL ARREOLA MIGUEL", FechaIngreso = DateTime.Parse("2005-10-21"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "28127", Alumno = "MARIA LOURDES MORENO GOLDARACENA", FechaIngreso = DateTime.Parse("2005-10-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "58626", Alumno = "AURORA GIL GONZALEZ", FechaIngreso = DateTime.Parse("2005-11-07"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "7120", Alumno = "JORGE PAREDES LIMON", FechaIngreso = DateTime.Parse("2005-11-10"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "68023", Alumno = "DANIEL COBOS ESCUDERO", FechaIngreso = DateTime.Parse("2005-11-16"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º A", Matricula = "2854", Alumno = "MERCEDES AVALOS ALEXANDER", FechaIngreso = DateTime.Parse("2005-11-17"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "81961", Alumno = "JUANA BAUTISTA PARIENTE GARCIA", FechaIngreso = DateTime.Parse("2005-11-17"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "61834", Alumno = "JOSE LUIS AVALOS LIRA", FechaIngreso = DateTime.Parse("2005-11-18"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "35855", Alumno = "ENRIQUE GOMEZ HERRERA", FechaIngreso = DateTime.Parse("2005-11-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º B", Matricula = "64050", Alumno = "REBECA PARRA WONG DE PACHECO", FechaIngreso = DateTime.Parse("2005-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "2º B", Matricula = "67718", Alumno = "GILBERTO FRANCISCO COLLINS LEDEZMA", FechaIngreso = DateTime.Parse("2005-12-07"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "8980", Alumno = "GLORIA AVENDAÑO Y MEJIA", FechaIngreso = DateTime.Parse("2005-12-08"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "2471", Alumno = "RAMON PARRA SANTANA", FechaIngreso = DateTime.Parse("2005-12-08"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "45626", Alumno = "JACINTO AVILA MEJIA", FechaIngreso = DateTime.Parse("2005-12-09"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "35834", Alumno = "YADIRA DEL CARMEN GOMEZ MENDEZ", FechaIngreso = DateTime.Parse("2005-12-13"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "55673", Alumno = "JOSE LUIS PAVAGEAU MENDEZ", FechaIngreso = DateTime.Parse("2005-12-15"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º B", Matricula = "8273", Alumno = "PABLO ARTURO COLMENARES ORDUÑA", FechaIngreso = DateTime.Parse("2005-12-15"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "60213", Alumno = "CARLOS ALBERTO AVILA PEÑA", FechaIngreso = DateTime.Parse("2005-12-15"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "66648", Alumno = "OBDULIO PELAYO PEREZ", FechaIngreso = DateTime.Parse("2005-12-19"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "90420", Alumno = "MARIA DEL CARMEN AWAD VAZQUEZ", FechaIngreso = DateTime.Parse("2005-12-21"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "9939", Alumno = "MARIA TERESA GONGORA ROJAS", FechaIngreso = DateTime.Parse("2005-12-23"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "70209", Alumno = "MARIA DE LAS MERCEDES RAFAELA PEREDA RAMOS", FechaIngreso = DateTime.Parse("2006-02-07"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "79682", Alumno = "JOSE DANIEL CONTRERAS MONFORTE BRITO", FechaIngreso = DateTime.Parse("2006-02-09"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "40647", Alumno = "JOSE ANTONIO AZAMAR GONZALEZ", FechaIngreso = DateTime.Parse("2006-02-09"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "2º B", Matricula = "9278", Alumno = "BLANCA AZUCENA PEREZ DE LA GARZA", FechaIngreso = DateTime.Parse("2006-02-16"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "1º A", Matricula = "3027", Alumno = "NICANDRO AZUELA MORELOS", FechaIngreso = DateTime.Parse("2006-02-16"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "69878", Alumno = "DEBBI GONZALEZ BUENO", FechaIngreso = DateTime.Parse("2006-02-17"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "3º A", Matricula = "4084", Alumno = "MARIA EUGENIA PEREZ CORTES", FechaIngreso = DateTime.Parse("2006-02-17"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º A", Matricula = "28795", Alumno = "GUADALUPE CORREA VALDEZ", FechaIngreso = DateTime.Parse("2006-02-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "21196", Alumno = "ANGEL BADILLO VAZQUEZ", FechaIngreso = DateTime.Parse("2006-02-23"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "62085", Alumno = "ALBERTO ARMANDO PEREZ BECERRA", FechaIngreso = DateTime.Parse("2006-03-07"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º A", Matricula = "11034", Alumno = "ALEJANDRO BAEZ AGUAYO", FechaIngreso = DateTime.Parse("2006-03-07"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "53467", Alumno = "ALBERTO GUSTAVO GONZALEZ TAPIA", FechaIngreso = DateTime.Parse("2006-03-08"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "82935", Alumno = "FLORA PEREZ MARIN", FechaIngreso = DateTime.Parse("2006-03-09"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "82587", Alumno = "PEDRO CORTAZAR LOPEZ", FechaIngreso = DateTime.Parse("2006-03-10"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "66674", Alumno = "BENITO BAEZ GONZALEZ", FechaIngreso = DateTime.Parse("2006-03-10"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "43885", Alumno = "CELIA MALICE PEREZ VELEZ", FechaIngreso = DateTime.Parse("2006-03-10"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "4086", Alumno = "IMELDA BALLESTEROS LAZO", FechaIngreso = DateTime.Parse("2006-03-10"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "61035", Alumno = "LUZ MARIA GONZALEZ VERANO", FechaIngreso = DateTime.Parse("2006-03-15"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º A", Matricula = "61040", Alumno = "OSCAR WILBERTH PEREZ BORDE", FechaIngreso = DateTime.Parse("2006-03-15"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "61045", Alumno = "LUISA IDALIA CORTES BALDEMAR", FechaIngreso = DateTime.Parse("2006-03-15"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "64963", Alumno = "JESUS R BAÑUELOS GONGORA", FechaIngreso = DateTime.Parse("2006-03-16"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "16212", Alumno = "EDUARDO LUIS PESCADOR TREVIÑO", FechaIngreso = DateTime.Parse("2006-03-16"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º B", Matricula = "8604", Alumno = "AIDA BARRIOS SALAZAR", FechaIngreso = DateTime.Parse("2006-03-20"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "1º A", Matricula = "60659", Alumno = "MARIA ESTHER GONZALEZ PEREZ", FechaIngreso = DateTime.Parse("2006-03-20"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "60661", Alumno = "CONCEPCION PICASO MONCADA", FechaIngreso = DateTime.Parse("2006-03-20"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "22913", Alumno = "ELIA ELIZABETH COSIO LAZCARI", FechaIngreso = DateTime.Parse("2006-03-22"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "97717", Alumno = "JOSEFA BENITEZ GUEVARA", FechaIngreso = DateTime.Parse("2006-03-23"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "3º A", Matricula = "3039", Alumno = "JULIAN PICHARDO GUARNEROS", FechaIngreso = DateTime.Parse("2006-03-24"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º B", Matricula = "31366", Alumno = "RAUL BENITEZ FLOTA", FechaIngreso = DateTime.Parse("2006-04-03"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º A", Matricula = "94689", Alumno = "JESUS ABIMAEL GONZALEZ CONTRERAS", FechaIngreso = DateTime.Parse("2006-04-07"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "7958", Alumno = "JOSE ALBERTO PINEDO CERVANTES", FechaIngreso = DateTime.Parse("2006-04-07"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "31219", Alumno = "RAUL CRUZ ARGUELLO", FechaIngreso = DateTime.Parse("2006-04-07"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "10497", Alumno = "MARCO ANTONIO BERNAL CORTES", FechaIngreso = DateTime.Parse("2006-04-07"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "1º A", Matricula = "11035", Alumno = "MARIA ISELA PINEYRO REYES", FechaIngreso = DateTime.Parse("2006-04-07"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "3º A", Matricula = "2565", Alumno = "ROSA GUADALUPE BERRONES CABALLERO", FechaIngreso = DateTime.Parse("2006-04-10"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "40019", Alumno = "FELIX GONZALEZ BARCENAS", FechaIngreso = DateTime.Parse("2006-04-12"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "53429", Alumno = "MARIA DE LAS MERCEDES PINO WESCHE", FechaIngreso = DateTime.Parse("2006-04-12"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "6401", Alumno = "JAVIER CRUZ LOZANO", FechaIngreso = DateTime.Parse("2006-04-18"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "66404", Alumno = "MARIA DOLORES BRAVO LOREDO", FechaIngreso = DateTime.Parse("2006-04-19"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "70644", Alumno = "JOSE ANGEL PIÑEIRO YOPIHUA", FechaIngreso = DateTime.Parse("2006-04-19"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "6400", Alumno = "GONZALO BRIONES ALVARADO", FechaIngreso = DateTime.Parse("2006-04-21"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º A", Matricula = "70648", Alumno = "MARTHA GONZALEZ SUAREZ", FechaIngreso = DateTime.Parse("2006-04-21"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "73347", Alumno = "MARTA ELENA PURON SANTOS", FechaIngreso = DateTime.Parse("2006-04-24"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "60663", Alumno = "ROGELIO CUELLAR SANCHEZ", FechaIngreso = DateTime.Parse("2006-04-25"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "26749", Alumno = "JORGE HORACIO BURGUEÑO RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-04-25"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "63089", Alumno = "JOSE ANTONIO RAFFUL LOREDO", FechaIngreso = DateTime.Parse("2006-08-15"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "62345", Alumno = "PATRICIA VICTORIA BUTRON LIRA", FechaIngreso = DateTime.Parse("2006-08-18"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º A", Matricula = "28168", Alumno = "MIDELA GONZALEZ HERNANDEZ", FechaIngreso = DateTime.Parse("2006-08-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "70652", Alumno = "MAYRA RAHME GUTIERREZ", FechaIngreso = DateTime.Parse("2006-08-24"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "11036", Alumno = "YUDITH CUEVAS FIGUEROA", FechaIngreso = DateTime.Parse("2006-08-25"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "3º B", Matricula = "70656", Alumno = "ANTONIO CABRERA CANALES", FechaIngreso = DateTime.Parse("2006-08-25"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "30496", Alumno = "PORFIRIO RAMIREZ BELTRAN", FechaIngreso = DateTime.Parse("2006-08-29"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "30932", Alumno = "CARLOS MANUEL CADENA BARRIENTOS", FechaIngreso = DateTime.Parse("2006-08-29"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "70660", Alumno = "FRANCISCO JAVIER GONZALEZ ALMAZAN", FechaIngreso = DateTime.Parse("2006-08-29"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "46281", Alumno = "RAMON MARCO ANTONIO RAMIREZ VARGAS", FechaIngreso = DateTime.Parse("2006-08-30"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "2º A", Matricula = "19243", Alumno = "LUZ MARIA DAVALOS POZOS", FechaIngreso = DateTime.Parse("2006-08-30"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "1º A", Matricula = "26879", Alumno = "ANTONIO CAGNANT SANDOVAL", FechaIngreso = DateTime.Parse("2006-08-30"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "3º A", Matricula = "80640", Alumno = "JORGE RAMIREZ CASTILLO", FechaIngreso = DateTime.Parse("2006-08-30"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º A", Matricula = "34241", Alumno = "ELISA CAMARENA JUAREZ", FechaIngreso = DateTime.Parse("2006-09-01"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º A", Matricula = "78520", Alumno = "JOSE FERNANDO GONZALEZ PEREZ", FechaIngreso = DateTime.Parse("2006-09-01"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "72651", Alumno = "ANTONIO RAMIREZ ASTILLERO", FechaIngreso = DateTime.Parse("2006-09-01"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "38746", Alumno = "MARCOS DE LEON CHONG", FechaIngreso = DateTime.Parse("2006-09-05"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º C", Matricula = "91735", Alumno = "SILVIA MARIA DEL SOCORRO CAMARGO TORRES", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "60665", Alumno = "PEDRO ALEJANDRO RAMIREZ SANCHEZ", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "1º A", Matricula = "60667", Alumno = "GUADALUPE CANCHE RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "60669", Alumno = "RAUL GONZALEZ DIAZ", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "60671", Alumno = "ANGEL RAMIREZ JIMENEZ", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "70664", Alumno = "GUADALUPE DE LEON GUERRERO", FechaIngreso = DateTime.Parse("2006-09-07"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "61683", Alumno = "JUAN MANUEL CANTO CASTILLO", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "38149", Alumno = "JERONIMO RAMOS CABRERA", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "7622", Alumno = "JORGE LUIS CARDENAS NIETO", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "34263", Alumno = "MIGUEL GRAJALES MENDEZ", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "72766", Alumno = "NORMA REBOLLEDO FLORES", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "89565", Alumno = "SAUL DOMINGUEZ GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "44698", Alumno = "GUADALUPE JUAN J CARDENAS FRANCO", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "50925", Alumno = "IRVING ABELARDO RESENDEZ MARTINEZ", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "2º C", Matricula = "60673", Alumno = "MARIA ELENA CARMONA CARDOS", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70668", Alumno = "GERARDO GUERRERO CRUZ", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70672", Alumno = "LUIS HUMBERTO RESENDIZ ORTIZ", FechaIngreso = DateTime.Parse("2006-09-08"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "1º A", Matricula = "84695", Alumno = "RAUL IVAN DOMINGUEZ CORONEL", FechaIngreso = DateTime.Parse("2006-09-13"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "70676", Alumno = "JORGE ALBERTO CARRERA CETINA", FechaIngreso = DateTime.Parse("2006-09-13"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º A", Matricula = "70680", Alumno = "ARTURO MANUEL RESENDIZ VILLASEÑOR", FechaIngreso = DateTime.Parse("2006-09-13"), Profesor = "Hilda Cordero Melendes"},
+                new Estudiantes { Grado = "1º B", Matricula = "39523", Alumno = "GERMAN CARRILLO VALDIVIESO", FechaIngreso = DateTime.Parse("2006-09-14"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "11010", Alumno = "ANDRES ALBERTO GUERRERO ORNELAS", FechaIngreso = DateTime.Parse("2006-09-14"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "3º A", Matricula = "78493", Alumno = "MAURILIO REYES LAGUNES", FechaIngreso = DateTime.Parse("2006-09-15"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º B", Matricula = "55834", Alumno = "LOURDES GUADALUPE DOMINGUEZ DEL CAMPO", FechaIngreso = DateTime.Parse("2006-09-15"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "20349", Alumno = "MARIA DEL CARMEN CASARES CERNA", FechaIngreso = DateTime.Parse("2006-09-15"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "60675", Alumno = "LUIS F ROA CASTILLO", FechaIngreso = DateTime.Parse("2006-09-15"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "70684", Alumno = "JOSE EMILIO CASARES CARREÑO", FechaIngreso = DateTime.Parse("2006-09-15"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º C", Matricula = "16628", Alumno = "FERNANDO GUEVARA AGUILAR", FechaIngreso = DateTime.Parse("2006-09-20"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60677", Alumno = "LUZ DEL CARMEN RODRIGUEZ MEZQUITA", FechaIngreso = DateTime.Parse("2006-09-20"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "92494", Alumno = "OLGA LUCIA ESPARZA GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "13702", Alumno = "ANA LILIA CASTAÑEDA GOMEZ", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "68320", Alumno = "DULCE MARIA RODRIGUEZ SANTIESTEBAN", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "6402", Alumno = "SERGIO CASTILLO GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "11037", Alumno = "LUDIVINA GUTIERREZ RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60679", Alumno = "GABRIEL ANTONIO GERARDO RODRIGUEZ SANTOS", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º B", Matricula = "6475", Alumno = "MARTIN ESPARZA DIAZ", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "48681", Alumno = "ALICIA CASTILLO CASTILLO", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "67134", Alumno = "OSCAR RODRIGUEZ ALONSO", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "67145", Alumno = "RAUL CASTILLO ACEVEDO", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "19869", Alumno = "ANTONIO GUTIERREZ TERAN", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "41106", Alumno = "ENRIQUE RODRIGUEZ LOPEZ", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "56024", Alumno = "RAMON ESPINOSA ZENTELLA", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "51825", Alumno = "JAIME HIPOLITO CASTILLO RAMIREZ", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "2º A", Matricula = "11038", Alumno = "EVENCIO RODRIGUEZ CORREA", FechaIngreso = DateTime.Parse("2006-09-22"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º A", Matricula = "74411", Alumno = "ISABEL CRISTINA CASTILLO DIAZ", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Veronica Castillo Toxqui"},
+                new Estudiantes { Grado = "2º B", Matricula = "37929", Alumno = "LEOPOLDO GUTIERREZ VARGAS", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "1º B", Matricula = "28337", Alumno = "MIGUEL RODRIGUEZ TERRONES", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "7055", Alumno = "GREGORIO ESPINOZA ROMO", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "3º A", Matricula = "20148", Alumno = "APOLINARIA CASTILLO GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "1º B", Matricula = "41000", Alumno = "ROSALIA RODRIGUEZ CANO", FechaIngreso = DateTime.Parse("2006-09-25"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "70688", Alumno = "RAFAEL CASTILLO CAMPILLO", FechaIngreso = DateTime.Parse("2006-09-26"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "42540", Alumno = "VICENTE GUZMAN CAMARERO", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "2196", Alumno = "MARIA DEL PILAR RODRIGUEZ TOVAR", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "4090", Alumno = "PATRICIA ESTUDILLO RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "37879", Alumno = "ALFONSO CASTILLO MARIN", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "30838", Alumno = "EDUARDO RODRIGUEZ CASTILLEJA", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "46556", Alumno = "RUBEN ISIDRO GUZMAN CARMONA", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "70692", Alumno = "ESTELA C ROMERO TORRES", FechaIngreso = DateTime.Parse("2006-09-27"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º B", Matricula = "67163", Alumno = "FRANCISCO ETIENNE GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Tania Morales Sainz"},
+                new Estudiantes { Grado = "1º C", Matricula = "88115", Alumno = "FERNANDO ROQUE JEREZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "41159", Alumno = "MARTHA ELVA HERNANDEZ LOPEZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "30725", Alumno = "ALFONSO ROSALES DOMINGUEZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "90410", Alumno = "MARIO LUIS FERNANDEZ SANTIAGO", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "2º B", Matricula = "3152", Alumno = "NOHEMI ROSAS ARIAS", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "1º C", Matricula = "47441", Alumno = "ALEJANDRA HERNANDEZ ZAVALA", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "67623", Alumno = "GLORIA ISELA RUIZ HERNANDEZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "26619", Alumno = "SONIA ESTELA FERNANDEZ DE ANDA", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "78764", Alumno = "MARTIN RUIZ GONZALEZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "20987", Alumno = "IRMA HERNANDEZ ALCOCER", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60681", Alumno = "IRMA RUIZ TALAVERA", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60683", Alumno = "IRMA FERNANDEZ ACUÑA DE JUAREZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "2º B", Matricula = "70696", Alumno = "ALEJANDRO TRINIDAD RUIZ DELGADO", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "70700", Alumno = "ROSA ELENA HERNANDEZ PEREZ", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "70704", Alumno = "JUAN RUIZ SALDIVAR", FechaIngreso = DateTime.Parse("2006-09-28"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "30873", Alumno = "LORIS FERNANDEZ MENDEZ", FechaIngreso = DateTime.Parse("2006-10-02"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "70708", Alumno = "ROMMEL RAMON RUIZ HERRERA", FechaIngreso = DateTime.Parse("2006-10-02"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "74138", Alumno = "JUANA HERNANDEZ FRAGOSO", FechaIngreso = DateTime.Parse("2006-10-03"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º B", Matricula = "25129", Alumno = "ABEL EDUARDO RUZ PRIETO", FechaIngreso = DateTime.Parse("2006-10-04"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "85279", Alumno = "MIGUEL FERRO GONZALEZ", FechaIngreso = DateTime.Parse("2006-10-05"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "64627", Alumno = "CUAUHTEMOC SALAS LARA", FechaIngreso = DateTime.Parse("2006-10-10"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "70712", Alumno = "JULIO HERNANDEZ PLATAS", FechaIngreso = DateTime.Parse("2006-10-10"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º A", Matricula = "69413", Alumno = "RODRIGO SALAS GONZALEZ", FechaIngreso = DateTime.Parse("2006-10-17"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "70716", Alumno = "JUAN MANUEL FLORES VERA", FechaIngreso = DateTime.Parse("2006-10-18"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º B", Matricula = "21852", Alumno = "IRMA GUADALUPE SALDAÑA SEQUERA", FechaIngreso = DateTime.Parse("2006-10-20"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "36588", Alumno = "IRENE MARGARITA HERNANDEZ HERRERA", FechaIngreso = DateTime.Parse("2006-10-20"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "70720", Alumno = "SONIA SALDAÑA GUZMAN", FechaIngreso = DateTime.Parse("2006-10-20"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º C", Matricula = "68118", Alumno = "VICTOR FLORES GOMEZ", FechaIngreso = DateTime.Parse("2006-10-23"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "41036", Alumno = "SERGIO SALDIVAR GAONA", FechaIngreso = DateTime.Parse("2006-10-23"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70724", Alumno = "PEDRO INES HERNANDEZ OBREGON", FechaIngreso = DateTime.Parse("2006-10-23"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70728", Alumno = "JORGE SALEH MEJIA", FechaIngreso = DateTime.Parse("2006-10-24"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "82836", Alumno = "JOSE LUIS FRAUSTRO SANTILLAN", FechaIngreso = DateTime.Parse("2006-10-25"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "92537", Alumno = "JORGE EUSEBIO SALEH BERROS", FechaIngreso = DateTime.Parse("2006-10-25"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "11388", Alumno = "GERMAN HERNANDEZ MORALES", FechaIngreso = DateTime.Parse("2006-10-27"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "33063", Alumno = "VICTOR MANUEL SALEH NAVARRETE", FechaIngreso = DateTime.Parse("2006-10-30"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "55816", Alumno = "EVERARDO JACINTO GALICIA AVILES", FechaIngreso = DateTime.Parse("2006-11-03"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "29712", Alumno = "CESAR JAVIER SALOMON ACEVEDO", FechaIngreso = DateTime.Parse("2006-11-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70732", Alumno = "JUAN RAMON HERNANDEZ MIGUEL", FechaIngreso = DateTime.Parse("2006-11-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "1º C", Matricula = "70736", Alumno = "MARIA CONCEPCION SAN MIGUEL SALOMON", FechaIngreso = DateTime.Parse("2006-11-07"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "51125", Alumno = "HILARIO SANCHEZ VAZQUEZ", FechaIngreso = DateTime.Parse("2006-11-09"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "90942", Alumno = "VICTOR M HERNANDEZ TAPIA", FechaIngreso = DateTime.Parse("2006-11-10"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "30640", Alumno = "PEDRO SANCHEZ PEÑA", FechaIngreso = DateTime.Parse("2006-11-10"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60685", Alumno = "ERNESTO SANCHEZ MORALES", FechaIngreso = DateTime.Parse("2006-11-10"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "3º C", Matricula = "70740", Alumno = "LEONARDO HERNANDEZ MARTINEZ", FechaIngreso = DateTime.Parse("2006-11-10"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "35771", Alumno = "HECTOR MANUEL SANCHEZ ESTUDILLO", FechaIngreso = DateTime.Parse("2006-11-16"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "65169", Alumno = "CONSUELO SANTORUM JUAREZ", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "30091", Alumno = "JOSE TIBURCIO HERNANDEZ CASTRO", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "2º B", Matricula = "17570", Alumno = "JULIO CESAR SAUCEDO SILVA", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "2º B", Matricula = "97327", Alumno = "FERNANDO BALTAZAR SAURI ZARATE", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º B", Matricula = "97653", Alumno = "ANA IRMA HERRERA VALERO", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "96865", Alumno = "LUIS SEPULVEDA HERRERA", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "11089", Alumno = "JUAN JOSE SERNA ROMERO", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "70744", Alumno = "JOSE DANIEL HINDMAN SOLDEVILLA", FechaIngreso = DateTime.Parse("2006-11-17"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "2º B", Matricula = "60687", Alumno = "MA DE LOURDES BALBINA SIFUENTES PUENTE", FechaIngreso = DateTime.Parse("2006-11-22"), Profesor = "Paulina Lopez Herdez"},
+                new Estudiantes { Grado = "3º B", Matricula = "3151", Alumno = "ROSARIO DEL CARMEN SILVA PEREZ", FechaIngreso = DateTime.Parse("2006-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "3806", Alumno = "JAVIER JACOBO NAVARRO", FechaIngreso = DateTime.Parse("2006-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "8611", Alumno = "IRMA CONCEPCION SILVA MARQUEZ", FechaIngreso = DateTime.Parse("2006-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "62339", Alumno = "ALMA ARECELY SILVA LONGORIA", FechaIngreso = DateTime.Parse("2006-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "3º B", Matricula = "15790", Alumno = "MARIA DE LOURDES JIMENEZ LARA", FechaIngreso = DateTime.Parse("2006-11-24"), Profesor = "Erica Gonzales Martines"},
+                new Estudiantes { Grado = "2º C", Matricula = "31276", Alumno = "PORFIRIO SIQUEFF DE LA GARZA", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "61965", Alumno = "ERNESTO ALAN SOLIS CERVANTES", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "86536", Alumno = "MARIA DEL ROSARIO JUAREZ CERVANTES", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "11039", Alumno = "MARIA DEL CARMEN SOSA BASILAKIS", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "3º A", Matricula = "70748", Alumno = "ALBERTO SOTO MORENO", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "3º A", Matricula = "70752", Alumno = "MARIA MACARIA LANDA AHUMADA", FechaIngreso = DateTime.Parse("2006-11-29"), Profesor = "Carmen Tepox Sanchez"},
+                new Estudiantes { Grado = "2º C", Matricula = "70756", Alumno = "FRANCISCO JAVIER SUSTAITA MUÑOZ", FechaIngreso = DateTime.Parse("2006-12-04"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "29130", Alumno = "JESUS ANTONIO TIBURCIO SARABIA", FechaIngreso = DateTime.Parse("2006-12-05"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "44889", Alumno = "PATRICIA EUGENIA LARA JIMENEZ", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "17909", Alumno = "FERNANDO TOLEDANO DIAZ", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "2177", Alumno = "ELOISA ZAIDA TORRES ARROYO", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "76033", Alumno = "LUIS ALBERTO LASCURAIN ALANIS", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "97720", Alumno = "MA DEL CARMEN TORRES ALANIS", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "70760", Alumno = "ANABELLA TORRES RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-12-07"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "3º C", Matricula = "65048", Alumno = "RAFAEL LAVIN SANCHEZ", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "3242", Alumno = "HUGO ALEJANDRO TORRES MENDEZ", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "4830", Alumno = "ALEJANDRO TORRES GATICA", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "83255", Alumno = "ALFONSO LIAÑO BAZAN", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "28657", Alumno = "PORFIRIO TOSCANO ANAYA", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "60689", Alumno = "MARIA ESTHER TRINIDAD GATTAS", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "60691", Alumno = "ELVIRA LLANAS GATTAS", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "61050", Alumno = "IGNACIO ANTONIO TRUEBA GATTAS", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "70764", Alumno = "GONZALO TRUJILLO ACOSTA", FechaIngreso = DateTime.Parse("2006-12-08"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "1º C", Matricula = "17113", Alumno = "JOSE FELIPE LLITERAS ABRAMSON", FechaIngreso = DateTime.Parse("2006-12-13"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "63758", Alumno = "ROSAURA VALDERRAMA GUILLEN", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "22259", Alumno = "LAURA ROCIO VAZQUEZ GONZALEZ", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "24134", Alumno = "EUGENIO LOPEZ CHALCHE", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60693", Alumno = "FRANCISCO JAVIER VAZQUEZ ARROYO", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "60695", Alumno = "MORELOS IVAN VELAZQUEZ VASQUEZ", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "3º C", Matricula = "60697", Alumno = "GILBERTO LOPEZ MENDIETA", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "60699", Alumno = "MARIA DEL CARMEN VELAZQUEZ CRUZ", FechaIngreso = DateTime.Parse("2006-12-14"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "28648", Alumno = "ARTURO VELAZQUEZ AMAYA", FechaIngreso = DateTime.Parse("2006-12-15"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "52694", Alumno = "JESUS ANTONIO LOPEZ HERNANDEZ", FechaIngreso = DateTime.Parse("2006-12-15"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "20499", Alumno = "MARIA YOLANDA VERA MARTINEZ", FechaIngreso = DateTime.Parse("2006-12-15"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "72665", Alumno = "ROBERTO VIDALES RENDON", FechaIngreso = DateTime.Parse("2006-12-18"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "86520", Alumno = "JORGE ARMANDO LOPEZ LOPEZ", FechaIngreso = DateTime.Parse("2006-12-18"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "91030", Alumno = "MAXIMO VILLAR DURAN", FechaIngreso = DateTime.Parse("2006-12-18"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "38218", Alumno = "GUSTAVO VILLASEÑOR ALONZO", FechaIngreso = DateTime.Parse("2006-12-20"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "2º C", Matricula = "72832", Alumno = "DORA ELVA LOYO GAMBOA", FechaIngreso = DateTime.Parse("2006-12-20"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "47241", Alumno = "FERNANDO VIRGEN RODRIGUEZ", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "59587", Alumno = "JERRIE ANN VITAL CHAVARRIA", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "78343", Alumno = "MARIA ETHEL LOZADA HERRERA", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "31314", Alumno = "CARLOS VORRATH CHAVEZ", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "17077", Alumno = "ALMA DELIA WONG CASAZZA", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "10570", Alumno = "LEOBARDO LUGO HERNANDEZ", FechaIngreso = DateTime.Parse("2006-12-21"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "32939", Alumno = "CARLOS ZAPATA CASTRO", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "17518", Alumno = "FELIPE ZARRABAL BARRIOS", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "41650", Alumno = "ANDREA LUNA BADILLO", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "2º C", Matricula = "59219", Alumno = "JUAN ANTONIO LUNA AZUARA", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "3º C", Matricula = "39673", Alumno = "CARLOS MADERA DIAZ", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "18466", Alumno = "JOEL MAGAÑA CARRANCO", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "31451", Alumno = "OMAR MANRIQUEZ ZAVALA", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "72039", Alumno = "RAUL ESTEBAN MARCOS GARCIA", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "11002", Alumno = "HECTOR JOEL MARQUEZ GARCES", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "70768", Alumno = "HECTOR DAVID MARRUFO DOMINGUEZ", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "70772", Alumno = "JORGE S MARTINEZ BARRANCO", FechaIngreso = DateTime.Parse("2006-12-22"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "3º C", Matricula = "70776", Alumno = "MARIANO RAMON MARTINEZ SOTO", FechaIngreso = DateTime.Parse("2006-12-26"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "1º C", Matricula = "6360", Alumno = "CONSTANTINO MARTINEZ OROZCO", FechaIngreso = DateTime.Parse("2006-12-27"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "40074", Alumno = "MARISELA MARTINEZ ASTORGA", FechaIngreso = DateTime.Parse("2006-12-27"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "38617", Alumno = "JOSE DE JESUS MARTINEZ MUÑOZ", FechaIngreso = DateTime.Parse("2006-12-27"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "32564", Alumno = "SIMON MARTINEZ REYES", FechaIngreso = DateTime.Parse("2006-12-27"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "70780", Alumno = "DANTE MARTINEZ HUERTA", FechaIngreso = DateTime.Parse("2006-12-27"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "61992", Alumno = "TITO ARIEL MARTINEZ ROJAS", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "95422", Alumno = "FELIX MARTINEZ GARCIA", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "62171", Alumno = "JOSE LUIS MEDINA CORONADO", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "1º C", Matricula = "16246", Alumno = "MARIO MEDINA HERNANDEZ", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Ester Duran Sarmiento"},
+                new Estudiantes { Grado = "3º C", Matricula = "72391", Alumno = "JUAN MANUEL MELLADO VENTURA", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Guadalupe Vazquez Romano"},
+                new Estudiantes { Grado = "2º C", Matricula = "31089", Alumno = "GUILLERMO MELO CELIS", FechaIngreso = DateTime.Parse("2006-12-28"), Profesor = "Adela Tepale Tecojote"},
+                new Estudiantes { Grado = "1º C", Matricula = "70784", Alumno = "DORA ALICIA MELO SOLIS", FechaIngreso = DateTime.Parse("2006-09-21"), Profesor = "Ester Duran Sarmiento"},
 
-
+            };
             var report = General.RenderReports(
                 Server.MapPath("~/Reportes/ListaEstudiantes.rdlc"),
-                new List<string> { "Cotizacion" },
-                new List<object> { this.generarCotizacion() },
+                new List<string> { "Estuidiante" },
+                new List<object> { estudiantes },
                 type
                 );
             return File(report.Item1, report.Item2);
-        }
-
-        private Cotizacion generarCotizacion()
-        {
-            List<Parametro> parametros2 = new List<Parametro> {
-                new Parametro
-                {
-                                                    FisicoQuimico = "Grasa",
-                                TecnicaAnalisis = "Gravimetría (Secado en estufa hasta peso constante)",
-                                Cantidad = 2,
-                                PrecioUnitario = 10000,
-                                PrecioTotal = 20000
-                }
-                ,
-                new Parametro
-                {
-                    FisicoQuimico = "Nitrógeno y proteína",
-                    TecnicaAnalisis = "Termo balanza",
-                    Cantidad = 2,
-                    PrecioUnitario = 25148,
-                    PrecioTotal = 50296
-                },
-                new Parametro
-                {
-                    FisicoQuimico = "Humedad y materia seca",
-                    TecnicaAnalisis = "Gravimetría (Secado en estufa hasta peso constante)",
-                    Cantidad = 2,
-                    PrecioUnitario = 26676,
-                    PrecioTotal = 53352
-                },
-                new Parametro
-                {
-                    FisicoQuimico = "Humedad y materia seca",
-                    TecnicaAnalisis = "Termo balanza",
-                    Cantidad = 2,
-                    PrecioUnitario = 14040,
-                    PrecioTotal = 28080
-                }
-            };
-
-            Producto producto1 = new Producto
-            {
-                Nombre = "Caramelo",
-                Componentes = new List<Componente>
-                {
-                    new Componente
-                    {
-                        TipoComponente = "1",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Humedad y materia seca",
-                                TecnicaAnalisis = "Gravimetría (Secado en estufa hasta peso constante)",
-                                Cantidad = 1,
-                                PrecioUnitario = 26676,
-                                PrecioTotal = 26676
-                            }
-                    },
-                    new Componente
-                    {
-                        TipoComponente = "2",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Nitrógeno y proteína",
-                                TecnicaAnalisis = "Termo balanza",
-                                Cantidad = 1,
-                                PrecioUnitario = 25148,
-                                PrecioTotal = 25148
-                            }
-                    },
-                     new Componente
-                    {
-                        TipoComponente = "3",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Nitrógeno y proteína",
-                                TecnicaAnalisis = "Termo balanza",
-                                Cantidad = 1,
-                                PrecioUnitario = 25148,
-                                PrecioTotal = 25148
-                            }
-                    }
-                }
-
-            };
-
-            Producto producto2 = new Producto
-            {
-                Nombre = "Caramelo",
-                Componentes = new List<Componente>
-                {
-                    new Componente
-                    {
-                        TipoComponente = "1",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Grasa",
-                                TecnicaAnalisis = "Gravimetría (Secado en estufa hasta peso constante)",
-                                Cantidad = 2,
-                                PrecioUnitario = 10000,
-                                PrecioTotal = 20000
-                            }
-                    },
-                    new Componente
-                    {
-                        TipoComponente = "2",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Nitrógeno y proteína",
-                                TecnicaAnalisis = "Termo balanza",
-                                Cantidad = 2,
-                                PrecioUnitario = 25148,
-                                PrecioTotal = 50296
-                            }
-                    },
-                     new Componente
-                    {
-                        TipoComponente = "3",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Humedad y materia seca",
-                                TecnicaAnalisis = "Gravimetría (Secado en estufa hasta peso constante)",
-                                Cantidad = 2,
-                                PrecioUnitario = 26676,
-                                PrecioTotal = 53352
-                            }
-                    },
-                    new Componente
-                    {
-                        TipoComponente = "4",
-                        Parametro =
-                            new Parametro
-                            {
-                                FisicoQuimico = "Humedad y materia seca",
-                                TecnicaAnalisis = "Termo balanza",
-                                Cantidad = 2,
-                                PrecioUnitario = 14040,
-                                PrecioTotal = 28080
-                            }
-                    }
-                }
-
-            };
-
-            Subcotizacion subcotizacion1 = new Subcotizacion
-            {
-                Productos = new List<Producto>
-                {
-                    producto1,
-                    producto2
-                }
-            };
-
-            Cotizacion cotizacion = new Cotizacion
-            {
-                Fecha = new DateTime(),
-                RazonSocial = "Super de Alimentos",
-                Referencia = "Para super",
-                Estado = "Creada",
-                Subcotizaciones = new List<Subcotizacion>
-                {
-                    subcotizacion1
-                }
-
-            };
-
-            return cotizacion;
         }
     }
 }
